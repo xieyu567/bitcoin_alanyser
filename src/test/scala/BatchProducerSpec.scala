@@ -1,12 +1,12 @@
-import com.effe.HttpTransaction
+import com.effe.{BatchProducer, HttpTransaction}
 import org.apache.spark.sql.Dataset
 import org.apache.spark.sql.test.SharedSparkSession
 import org.scalatest.matchers.should.Matchers
 import org.scalatest.wordspec.AnyWordSpec
 
 class BatchProducerSpec extends AnyWordSpec with Matchers with SharedSparkSession {
-    val httpTransaction1 = HttpTransaction("1532365695", "70683282", "7740.00", "0", "0.10041719")
-    val httpTransaction2 = HttpTransaction("1532365693", "70683281", "7739.99", "0", "0.00148564")
+    val httpTransaction1: HttpTransaction = HttpTransaction("1532365695", "70683282", "7740.00", "0", "0.10041719")
+    val httpTransaction2: HttpTransaction = HttpTransaction("1532365693", "70683281", "7739.99", "0", "0.00148564")
 
     "BatchProducer.jsonToHttpTransaction" should {
         "create a Dataset[HttpTransation] from a Json string" in {
@@ -17,7 +17,7 @@ class BatchProducerSpec extends AnyWordSpec with Matchers with SharedSparkSessio
                   |""".stripMargin
 
             val ds: Dataset[HttpTransaction] = BatchProducer.jsonToHttpTransactions(json)
-            ds.collect() should contain theSameElementsAs (Seq(httpTransaction1, httpTransaction2))
+            ds.collect() should contain theSameElementsAs Seq(httpTransaction1, httpTransaction2)
         }
     }
 }
