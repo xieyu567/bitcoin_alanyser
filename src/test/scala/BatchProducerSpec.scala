@@ -1,9 +1,7 @@
 import com.effe.{BatchProducer, HttpTransaction, Transaction}
 import org.apache.spark.sql.test.SharedSparkSession
-import org.apache.spark.sql.{Dataset, SparkSession}
-import org.scalatest.funspec.AnyFunSpec
+import org.apache.spark.sql.Dataset
 import org.scalatest.matchers.should.Matchers
-import org.scalatest.wordspec.AnyWordSpec
 
 import java.sql.Timestamp
 

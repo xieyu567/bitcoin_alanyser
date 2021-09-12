@@ -3,7 +3,6 @@ import com.effe.{BatchProducer, Transaction}
 import java.sql.Timestamp
 import org.apache.spark.sql.test.SharedSparkSession
 import org.scalatest.matchers.should.Matchers
-import org.scalatest.wordspec.AnyWordSpecLike
 
 class BatchProducerIT extends SharedSparkSession with Matchers {
 
