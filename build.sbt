@@ -11,6 +11,8 @@ libraryDependencies ++= Seq(
   "org.apache.spark" %% "spark-core" % sparkVersion % Test classifier "tests",
   "org.apache.spark" %% "spark-sql" % sparkVersion % Provided,
   "org.apache.spark" %% "spark-sql" % sparkVersion % Test classifier "tests",
+  "org.apache.spark" %% "spark-catalyst" % sparkVersion % Test classifier "tests",
+  "org.apache.spark" %% "spark-catalyst" % sparkVersion % Test classifier "test-sources",
   "com.typesafe.scala-logging" %% "scala-logging" % "3.9.4",
   "org.scalatest" %% "scalatest" % "3.2.9" % "test",
   "org.typelevel" %% "cats-core" % "2.6.1",
