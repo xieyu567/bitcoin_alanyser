@@ -25,4 +25,3 @@ class BatchProducerIT extends SharedSparkSession with Matchers {
         }
     }
 }
-
