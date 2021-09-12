@@ -3,7 +3,7 @@ name := "bitcoin-analyser"
 version := "0.1"
 
 scalaVersion := "2.12.14"
-val sparkVersion = "3.0.3"
+val sparkVersion = "3.1.2"
 
 libraryDependencies ++= Seq(
   "org.lz4" % "lz4-java" % "1.8.0",
